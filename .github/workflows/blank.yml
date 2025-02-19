@@ -18,4 +18,4 @@ jobs:
 
       - name: print ROLE_TO_ASSUME
         run: |
-          echo "ROLE: ${{ env.ROLE }}"
+          echo "ROLE: ${{ vars.ROLE }}"
