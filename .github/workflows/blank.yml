@@ -1,0 +1,21 @@
+name: Deploy to AWS
+on:
+  push:
+    branches:
+      - main
+
+      
+
+jobs:
+  deploy-testing:
+    if: github.ref == 'refs/heads/main'
+    environment: test
+    name: Deploy to testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: print ROLE_TO_ASSUME
+        run: |
+          echo "ROLE: ${{ env.ROLE }}"
